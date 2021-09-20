@@ -1,3 +1,22 @@
 .header {
+  &--start-animation {
+    animation: fade-in-top 0.5s ease-in-out;
+  }
+
+  @include viewport--md {
+    animation: none;
+  }
+}
+
+.header__wrapper {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  background-color: $color-default-white;
+}
+
+.header__logo svg {
   display: block;
+  width: 192px;
+  height: 24px;
 }

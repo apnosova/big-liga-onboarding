@@ -2,7 +2,6 @@
 //---------------------------------
 
 @import "vendor/normalize";
-// @import "vendor/swiper";
 
 // Global
 //---------------------------------
@@ -13,11 +12,14 @@
 @import "global/reboot";
 @import "global/utils";
 @import "global/container";
+@import "global/keyframes";
 
 // Blocks
 //---------------------------------
 
 @import "blocks/header";
+@import "blocks/loader";
+@import "blocks/main-page";
 
 
 // используйте это для отключения ховеров на тач устройствах

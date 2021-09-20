@@ -1,0 +1,180 @@
+.main-page {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100 * var(--vh, 1vh) - var(--header));
+
+  background-image: url("../img/svg/letter-bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include viewport--md {
+    flex-direction: column;
+
+    background: none;
+  }
+}
+
+.main-page__title {
+  width: 59%;
+  margin: 0;
+  margin-right: 40px;
+  padding-top: 60px;
+  padding-bottom: 160px;
+
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 96px;
+  color: $color-neon-blue;
+
+  @include viewport--md {
+    width: 100%;
+    margin-right: 0;
+    padding-bottom: 60px;
+  }
+
+  @include viewport--sm {
+    font-size: 50px;
+  }
+}
+
+.main-page__content {
+  padding-bottom: 160px;
+
+  @include viewport--md {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    padding-top: 160px;
+    padding-bottom: 35px;
+
+    background-color: $color-neon-blue;
+  }
+}
+
+.main-page__content--js {
+  @include viewport--md {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: none;
+    min-height: calc(100 * var(--vh, 1vh) - var(--header));
+  }
+}
+
+.main-page__content--js.main-page__content--switch {
+  @include viewport--md {
+    display: flex;
+
+    animation: slide-from-left 2s linear;
+  }
+}
+
+.main-page__content--js.main-page__content--switch-back {
+  @include viewport--md {
+    display: flex;
+
+    animation: slide-from-right 2s linear both;
+  }
+}
+
+.main-page__image {
+  width: 100%;
+  max-width: 316px;
+  height: 289px;
+
+  @include viewport--md {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.main-page__text {
+  margin: 0;
+  margin-top: 27px;
+
+  font-size: 30px;
+  line-height: 40px;
+
+  @include viewport--md {
+    width: 80%;
+    max-width: 352px;
+    margin-top: 32px;
+
+    color: $color-default-white;
+  }
+}
+
+.main-page__dinosaur-scream {
+  @include viewport--md {
+    path {
+      fill: $color-default-white;
+    }
+  }
+}
+
+.main-page__lightning {
+  @include viewport--md {
+    fill: $color-default-white;
+  }
+}
+
+.main-page__dinosaur-flag {
+  @include viewport--md {
+    fill: $color-default-white;
+  }
+}
+
+.main-page--start-animation {
+  .main-page__title {
+    animation: fade-in-bottom 0.5s ease-in-out;
+  }
+
+  .main-page__text {
+    animation: fade-in-bottom 0.5s ease-in-out;
+
+    @include viewport--md {
+      animation: none;
+    }
+  }
+
+  .main-page__dinosaur {
+    animation: fade-in-top 0.5s ease-in-out;
+
+    @include viewport--md {
+      animation: none;
+    }
+  }
+
+  .main-page__dinosaur-scream {
+    opacity: 0;
+    animation: scream 1s ease 0.6s infinite;
+  }
+
+  .main-page__lightning {
+    &--violet-left {
+      animation: lightning-violet-left 0.8s ease-in-out 0.3s backwards;
+    }
+
+    &--red {
+      animation: lightning-red 0.7s ease-in-out 0.5s backwards;
+    }
+
+    &--blue {
+      animation: lightning-blue 0.6s ease-in-out 0.6s backwards;
+    }
+
+    &--violet-right {
+      animation: lightning-violet-right 0.6s ease-in-out 0.2s backwards;
+    }
+
+    @include viewport--md {
+      animation: none;
+    }
+  }
+}

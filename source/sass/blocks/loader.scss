@@ -1,0 +1,87 @@
+.loader {
+  display: none;
+}
+
+.loader--show {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  overflow: hidden;
+
+  background-color: $color-default-white;
+
+  @include viewport--md {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 100px;
+  }
+
+  @include viewport--sm {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.loader__image {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 100%;
+  max-width: 800px;
+  height: 100px;
+  overflow: visible;
+
+  @include viewport--md {
+    max-width: 550px;
+    height: 70px;
+  }
+}
+
+.loader__text {
+  margin: 0;
+  margin-top: auto;
+  padding-bottom: 4px;
+
+  font-size: 24px;
+  line-height: 22px;
+  text-align: center;
+  -webkit-text-fill-color: $color-transparent;
+
+  background-image: linear-gradient(to right, $color-default-black 20%, $color-torch-red 40%, $color-neon-blue 60%, $color-default-black 80%);
+  background-size: 200% auto;
+  background-clip: text;
+
+  animation: highlight 2s ease-in-out 1.5s infinite alternate both;
+
+  &--tablet {
+    display: none;
+
+    @include viewport--md {
+      display: block;
+    }
+  }
+
+  &--desktop {
+    @include viewport--md {
+      display: none;
+    }
+  }
+}
+
+.loader__image-text {
+  animation: fade-in-bottom 0.5s ease-in-out;
+}
+
+.loader__image-letter {
+  animation: fade-in-top 0.5s ease-in-out 0.8s backwards, rotate-45deg 3s 1.5s linear infinite alternate;
+  transform-origin: 52% 50%;
+}
